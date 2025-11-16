@@ -1,5 +1,10 @@
-node_modules
-.angular
-.vscode
-dist
-.editorconfig
+/node_modules
+
+
+/.angular
+
+
+/.vscode
+
+
+/dist
