@@ -1,4 +1,3 @@
-import "./chunk-BJUHSEB6.js";
 import {
   Component,
   Deferred,
@@ -47,6 +46,7 @@ import {
   ɵgetDefaultInstanceOf,
   ɵzoneWrap
 } from "./chunk-BPF5VOWS.js";
+import "./chunk-BJUHSEB6.js";
 import {
   InjectionToken,
   Injector,

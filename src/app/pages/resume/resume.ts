@@ -23,7 +23,7 @@ export class Resume implements OnInit, OnDestroy {
 
   downloadResume() {
     const link = document.createElement('a');
-    link.href = '/pdf/resume.pdf';
+    link.href = 'pdf/resume.pdf';
     link.download = 'SouravSarkerResume.pdf';
     link.click();
 
