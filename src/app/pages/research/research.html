@@ -1,0 +1,91 @@
+<article class="research active">
+  <header>
+    <h2 class="h2 article-title">Research</h2>
+  </header>
+
+  <section class="timeline">
+    <div class="title-wrapper">
+      <div class="icon-box">
+        <ion-icon name="flask-outline" />
+      </div>
+
+      <h3 class="h3">Research Experience</h3>
+    </div>
+
+    <ol class="timeline-list">
+      @for (research of researchExperience; track research.position) {
+      <li class="timeline-item">
+        <h4 class="h4 timeline-item-title">{{ research.position }}</h4>
+
+        <span>{{ research.duration }}</span>
+
+        <p class="timeline-text" style="margin-bottom: 10px;">
+          <em>{{ research.institution }}</em>
+        </p>
+
+        <ul class="timeline-text" style="list-style: disc; padding-left: 20px;">
+          @for (resp of research.responsibilities; track $index) {
+          <li style="margin-bottom: 8px;">{{ resp }}</li>
+          }
+        </ul>
+      </li>
+      }
+    </ol>
+  </section>
+
+  <section class="publications">
+    <div class="flex gap-10">
+      <div class="icon-box">
+        <ion-icon name="document-text-outline" />
+      </div>
+
+      <h3 class="h3">Publications</h3>
+    </div>
+
+    <div class="scholar-link" style="margin-bottom: 20px;">
+      <button class="scholar-button" (click)="openGoogleScholar()">
+        <ion-icon name="school-outline"></ion-icon>
+        <span>View Google Scholar Profile</span>
+      </button>
+    </div>
+
+    <ul class="publications-list">
+      @for (pub of publications; track pub.title) {
+      <li class="publication-item content-card">
+        <h4 class="h4 publication-title">{{ pub.title }}</h4>
+
+        <p class="publication-details">
+          <strong>{{ pub.conference }}</strong>
+          <br />
+          {{ pub.location }}, {{ pub.year }}, {{ pub.pages }}
+        </p>
+
+        <button class="doi-link" (click)="openDOI(pub.doi)">
+          <ion-icon name="link-outline"></ion-icon>
+          <span>{{ pub.doi }}</span>
+        </button>
+      </li>
+      }
+    </ul>
+  </section>
+
+  <section class="achievements-section">
+    <div class="title-wrapper">
+      <div class="icon-box">
+        <ion-icon name="trophy-outline" />
+      </div>
+
+      <h3 class="h3">Achievements</h3>
+    </div>
+
+    <ul class="achievements-list content-card">
+      @for (achievement of achievements; track achievement.title) {
+      <li class="achievement-item">
+        <h5 class="h5">{{ achievement.title }}</h5>
+        <p class="timeline-text">{{ achievement.description }}</p>
+      </li>
+      }
+    </ul>
+  </section>
+</article>
+

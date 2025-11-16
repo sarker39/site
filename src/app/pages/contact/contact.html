@@ -1,0 +1,58 @@
+<article class="contact active">
+  <header>
+    <h2 class="h2 article-title">Contact</h2>
+  </header>
+
+  <section class="mapbox">
+    <figure>
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d116833.83187832944!2d90.337287627735!3d23.780975728878552!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8b087026b81%3A0x8fa563bbdd5904c2!2sDhaka!5e0!3m2!1sen!2sbd!4v1763282425092!5m2!1sen!2sbd" 
+        width="600" 
+        height="450" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+     </iframe>
+    </figure>
+  </section>
+
+  <section class="contact-form">
+    <h3 class="h3 form-title">Contact Form</h3>
+
+    <form (ngSubmit)="sendMessage()" class="form" [formGroup]="contactForm">
+      <div class="input-wrapper">
+        <div>
+          <!-- name input -->
+          <input type="text" formControlName="fullName" class="form-input" placeholder="Full name" />
+
+          <!-- validation error -->
+          @if (isFormSubmit() && contactForm.controls['fullName'].errors) {
+            <div class="error-msg">* Enter your full name.</div>
+          }
+        </div>
+
+        <div>
+          <!-- email input -->
+          <input type="email" formControlName="email" class="form-input" placeholder="Email address" />
+          <!-- validation error -->
+          @if (isFormSubmit() && contactForm.controls['email'].errors) {
+            <div class="error-msg">* Enter your valid email address.</div>
+          }
+        </div>
+      </div>
+
+      <!-- messaage input -->
+      <textarea formControlName="message" class="form-input" placeholder="Your Message"></textarea>
+      @if (isFormSubmit() && contactForm.controls['message'].errors) {
+        <div class="error-msg">* Enter your message.</div>
+      }
+
+      <!-- submit button -->
+      <button class="form-btn" type="submit">
+        <ion-icon name="paper-plane" />
+        <span>Send Message</span>
+      </button>
+    </form>
+  </section>
+</article>
